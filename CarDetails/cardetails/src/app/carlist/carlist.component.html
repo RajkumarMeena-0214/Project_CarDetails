@@ -4,7 +4,7 @@
 
 <body>
   <div class="center" align ="center">
-    <h1>CAR LIST</h1>
+    <h2>CAR LIST</h2>
     <br>
     
     <div>
@@ -22,7 +22,7 @@
     </div>
     <br><br>
     <div style="color: red;">{{form.message}}</div>
-    <table border="1">
+    <table border="2">
       <tr>
         
         <th>SELECT</th>
@@ -48,7 +48,7 @@
         <td>{{m.price}}</td>
         <td>{{m.purchaseDate}}</td>
        
-        <td> <a (click)="edit( '/user/' +  m.id)" style="color: blue;">edit
+        <td> <a (click)="edit( '/car/' +  m.id)" style="color: blue;">edit
         </a></td>
       </tr>
     </table>
@@ -58,6 +58,10 @@
   </div>
 </body>
 
+<br>
+<br>
+
+<app-footer></app-footer>
   
      
    

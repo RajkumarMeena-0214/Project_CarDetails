@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NavebarComponent } from './navebar/navebar.component';
 import { FooterComponent } from './footer/footer.component';
-import { SignupComponent } from './signup/signup.component';
 import { CarComponent } from './car/car.component';
 import { CarlistComponent } from './carlist/carlist.component';
 
@@ -19,7 +18,6 @@ import { CarlistComponent } from './carlist/carlist.component';
     DashboardComponent,
     NavebarComponent,
     FooterComponent,
-    SignupComponent,
     CarComponent,
     CarlistComponent,
     
