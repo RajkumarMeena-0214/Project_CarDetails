@@ -1,0 +1,64 @@
+
+
+<app-navebar></app-navebar>
+
+<body>
+  <div class="center" align ="center">
+    <h1>CAR LIST</h1>
+    <br>
+    
+    <div>
+      <select name="id" [(ngModel)]="form.search.id">
+        <option [ngValue]="" value="undefined">{{'------Select Owner Name-------' }}</option>
+        <option *ngFor="let obj of form.preload" [value]="obj.key">{{obj.value}}</option>
+       
+      </select>
+      &nbsp;
+      <input type="text" [(ngModel)]="form.search.company">
+      &nbsp;
+      <button (click)="search()">Search</button>&nbsp;
+      <button (click)="delete()">Delete</button>
+      
+    </div>
+    <br><br>
+    <div style="color: red;">{{form.message}}</div>
+    <table border="1">
+      <tr>
+        
+        <th>SELECT</th>
+        <th>ID</th>
+        <th>Car_Image</th>
+        <th>OWNER_NAME</th>
+        <th>COMPANY</th>
+        <th>MODEL</th>
+        <th>PRICE</th>
+        <th>PURCHASE_DATE</th>
+        <th>EDIT</th>
+       
+        
+      </tr>
+      <tr *ngFor="let m of form.list">
+        <td><input type="checkbox" (change)="onCheckboxChange(m.id)" /></td>
+       
+        <td>{{m.id}}</td>
+        <td> <img src="http://localhost:8080/User/profilePic/{{m.id}}" height="55px" width="80px"></td>
+        <td>{{m.ownerName}}</td>
+        <td>{{m.company}}</td>
+        <td>{{m.model}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.purchaseDate}}</td>
+       
+        <td> <a (click)="edit( '/user/' +  m.id)" style="color: blue;">edit
+        </a></td>
+      </tr>
+    </table>
+  
+
+
+  </div>
+</body>
+
+  
+     
+   
+

@@ -1,0 +1,81 @@
+package com.rays.dto;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.rays.common.BaseDTO;
+
+@Entity
+@Table(name = "ST_CAR")
+public class BookDTO extends BaseDTO {
+
+	@Column(name = "OWNER_NAME", length = 50)
+	private String name;
+
+	@Column(name = "COMPANY")
+	private String bookName;
+
+	@Column(name = "MODEL")
+	private String model;
+
+	@Column(name = "IMAGE")
+	private byte image;
+
+	@Column(name = "CAR_PRICE")
+	private String bookPrice;
+
+	@Column(name = "PURCHASE_DATE")
+	private Date purchaseDate;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public byte getImage() {
+		return image;
+	}
+
+	public void setImage(byte image) {
+		this.image = image;
+	}
+
+	public String getBookPrice() {
+		return bookPrice;
+	}
+
+	public void setBookPrice(String bookPrice) {
+		this.bookPrice = bookPrice;
+	}
+
+	public Date getPurchaseDate() {
+		return purchaseDate;
+	}
+
+	public void setPurchaseDate(Date purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
+
+}

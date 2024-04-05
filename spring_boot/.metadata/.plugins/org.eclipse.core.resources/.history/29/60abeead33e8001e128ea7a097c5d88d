@@ -1,0 +1,30 @@
+package com.rays.service;
+
+
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.rays.common.BaseServiceImp;
+import com.rays.dao.BookDAOInt;
+import com.rays.dto.BookDTO;
+
+@Service
+@Transactional
+public class UserServiceImpl extends BaseServiceImp<BookDTO, BookDAOInt> implements UserServiceInt {
+
+
+	public BookDTO authenticate(String loginId, String password) {
+BookDTO dto = baseDao.findByUniqueKey("loginId", loginId);
+		
+		if(dto != null) {
+			if(dto.getPassword().equals(password)) {	
+				return dto;
+			}
+		}
+
+		
+		return null;
+	}
+
+}

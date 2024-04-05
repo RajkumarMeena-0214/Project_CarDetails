@@ -1,0 +1,65 @@
+<div align="center">
+    <tr *ngIf="form.id">
+
+    <h2 style="color: navy">UPDATE CAR </h2>
+</tr>
+<tr *ngIf="!form.id">
+    <h2 style="color: navy">ADD CAR </h2>
+</tr>
+  
+<div style="height: 15px; margin-bottom: 12px" align="center" class="success" *ngIf="form.message">
+        {{ form.message }}
+      </div>
+    <table>
+     
+        <tr>
+            <th>OWNER NAME :</th>
+            <td><input type="text" name="ownerName" [(ngModel)]="form.ownerName" /> </td>
+            <td *ngIf="inputerror.ownerName != null" class="error" style="position: fixed; color: red;">
+                {{inputerror.ownerName}}
+            </td>
+        </tr>
+        <tr>
+            <th> COMPANY:</th>
+            <td><input type="text" name="company" [(ngModel)]="form.company" /> </td>
+            <td *ngIf="inputerror.company != null" class="error" style="position: fixed; color: red;">
+                {{inputerror.company}}
+            </td>
+        </tr>
+        <tr>
+            <th> MODEL:</th>
+            <td><input type="text" name="model" [(ngModel)]="form.model" /> </td>
+            <td *ngIf="inputerror.model != null" class="error" style="position: fixed; color: red;">
+                {{inputerror.model}}
+            </td>
+        </tr>
+        <tr>
+            <th>PRICE :</th>
+            <td><input type="text" name="price" [(ngModel)]="form.price" /> </td>
+            <td *ngIf="inputerror.price != null" class="error" style="position: fixed; color: red;">
+                {{inputerror.price}}
+            </td>
+        </tr>
+        
+        <tr>
+            <th>PURCHASE DATE :</th>
+            <td>
+               <input type="date" name="purchaseDate" [(ngModel)]="form.purchaseDate">
+            </td>
+        </tr>
+
+        <tr>
+            <th>Car Pic :</th>
+            <td> <img src="http://localhost:8080/User/profilePic/{{form.id}}" height="55px" width="80px"></td>
+        </tr>
+        <tr>
+            <th>Car Image :</th>
+            <td><input type="file" id="customFile" name="imageId" (change)="onFileSelect($event)" accept="image/*">
+            </td>
+        </tr>
+       <tr>
+            <th></th>
+            <td><button (click)="save()">save</button></td>
+        </tr>
+    </table>
+</div>

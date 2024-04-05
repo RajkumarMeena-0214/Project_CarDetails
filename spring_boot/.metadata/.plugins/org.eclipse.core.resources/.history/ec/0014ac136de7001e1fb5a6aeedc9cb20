@@ -1,0 +1,10 @@
+package com.rays.service;
+
+import com.rays.dto.AttachmentDTO;
+
+public interface AttachmentServiceInt {
+	
+	public long add(AttachmentDTO dto);
+
+	public AttachmentDTO findById(long pk);
+}

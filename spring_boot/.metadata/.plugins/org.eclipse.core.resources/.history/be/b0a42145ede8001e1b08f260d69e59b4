@@ -1,0 +1,43 @@
+package com.rays.form;
+
+import java.util.Date;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.lang.NonNull;
+
+import com.rays.common.BaseDTO;
+import com.rays.common.BaseForm;
+import com.rays.dto.CarDTO;
+
+public class CarForm extends BaseForm {
+
+	    @NotEmpty(message = "OwnerName is required")
+		private String ownerName;
+
+		@NotEmpty(message = "Company is required")
+		private String company;
+
+		@NotEmpty(message = "Model is required")
+		private String model;
+		
+		@NotEmpty(message = "Price is required")
+		private String price;
+        
+		private Date purchaseDate;
+
+	
+
+
+	@Override
+	public BaseDTO getDto() {
+		CarDTO dto = initDTO(new CarDTO());
+		dto.setName(name);
+		dto.setBookName(bookName);
+		dto.setBookPrice(bookPrice);
+		dto.setPurchaseDate(purchaseDate);
+		return dto;
+	}
+
+}
